@@ -16,3 +16,10 @@ module "igw" {
   vpc_id = module.vpc.vpc_id
 }
 
+module "route_table" {
+  source            = "./modules/route_table"
+  vpc_id            = module.vpc.vpc_id
+  igw_id            = module.igw.igw_id
+  public_subnet_ids = module.subnets.public_subnet_ids
+}
+
