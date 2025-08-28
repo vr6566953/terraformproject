@@ -14,3 +14,15 @@ variable "availability_zones" {
   type = list(string)
 }
 
+variable "instance_ami" {
+  type = string
+}
+
+variable "instance_type" {
+  default = "t2.micro"
+}
+
+variable "public_key_path" {
+  type = string
+}
+
