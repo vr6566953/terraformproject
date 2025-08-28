@@ -30,5 +30,8 @@ resource "aws_instance" "nginx" {
   associate_public_ip_address = true
   vpc_security_group_ids = [aws_security_group.http_sg.id]
   key_name               = aws_key_pair.deployer.key_name
+  tags = {
+    Name = "nginx-instance"
+  }
 }
 
