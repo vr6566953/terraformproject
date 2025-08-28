@@ -11,3 +11,8 @@ module "subnets" {
   availability_zones  = var.availability_zones
 }
 
+module "igw" {
+  source = "./modules/internet_gateway"
+  vpc_id = module.vpc.vpc_id
+}
+
